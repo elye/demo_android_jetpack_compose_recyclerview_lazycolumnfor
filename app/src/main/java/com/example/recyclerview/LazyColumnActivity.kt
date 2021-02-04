@@ -3,7 +3,9 @@ package com.example.recyclerview
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyColumnFor
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -34,12 +36,14 @@ fun MyLazyColumn(
     modifier: Modifier = Modifier,
     listItems: List<Item>,
 ) {
-    LazyColumnFor(
-        modifier = modifier, items = listItems,
+    LazyColumn(
+        modifier = modifier,
         contentPadding = PaddingValues(16.dp, 16.dp, 16.dp)
-    ) { itemText ->
-        ViewItem(itemText = itemText)
-        Spacer(modifier = Modifier.fillMaxWidth().height(16.dp))
+    ) {
+        items(listItems) {
+            ViewItem(itemText = it)
+            Spacer(modifier = Modifier.fillMaxWidth().height(16.dp))
+        }
     }
 }
 
