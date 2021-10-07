@@ -1,18 +1,18 @@
 package com.example.recyclerview
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import java.io.Serializable
 
-class LauncherActivity : AppCompatActivity() {
+class LauncherActivity : ComponentActivity() {
 
     companion object {
         const val DATA_KEY = "dataKey"

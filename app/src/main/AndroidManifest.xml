@@ -11,7 +11,8 @@
         android:theme="@style/Theme.RecyclerView">
         <activity android:name=".LazyColumnActivity"
             android:label="LazyColumn"/>
-        <activity android:name=".LauncherActivity">
+        <activity android:name=".LauncherActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
