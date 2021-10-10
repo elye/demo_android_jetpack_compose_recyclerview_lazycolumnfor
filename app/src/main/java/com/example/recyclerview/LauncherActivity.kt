@@ -57,6 +57,18 @@ class LauncherActivity : ComponentActivity() {
                 Button(
                     onClick = {
                         startActivity(Intent(this@LauncherActivity,
+                            HybridActivity::class.java).apply {
+                            putExtra(DATA_KEY, listItems as Serializable)
+                        })
+                    }, modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp)
+                ) {
+                    Text(text = "Hybrid RecyclerView", fontSize = 32.sp)
+                }
+                Button(
+                    onClick = {
+                        startActivity(Intent(this@LauncherActivity,
                             LazyColumnActivity::class.java).apply {
                                 putExtra(DATA_KEY, listItems as Serializable)
                         })
